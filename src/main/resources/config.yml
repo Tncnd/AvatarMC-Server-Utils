@@ -1,0 +1,87 @@
+# Dil / Language: tr veya en
+language: tr
+
+# ==============================
+#  ElementBending Yapilandirmasi
+# ==============================
+
+limits:
+  # Her elementi en fazla kac oyuncu secebilir
+  per-element: 4
+  # Sunucudaki maksimum Avatar sayisi
+  avatar: 1
+
+# Bos elle sag tik ile atilan Wind/Fire Charge bekleme suresi (saniye)
+charge-cooldown-seconds: 2
+
+# Guc bekleme sureleri (saniye)
+cooldowns:
+  AIR_JUMP: 20
+  AIR_BLAST: 30
+  TORNADO: 180
+  FLAME_WAVE: 20
+  FIRE_DASH: 30
+  DRAGON_FIRE: 180
+  WATER_PUSH: 20
+  ICE_CHAIN: 30
+  HEALING_WAVE: 180
+  ROCK_PUNCH: 20
+  STONE_WALL: 30
+  EARTHQUAKE: 180
+  AVATAR_STATE: 300
+
+abilities:
+  air-jump:
+    launch-power: 1.15
+  air-blast:
+    radius: 5.0
+    push-power: 1.5
+  tornado:
+    radius: 8.0
+    launch-power: 2.2
+    weapon-disable-seconds: 5
+  flame-wave:
+    range: 6.0
+    fire-seconds: 5
+  fire-dash:
+    speed-seconds: 8
+  dragon-fire:
+    duration-seconds: 15
+    ignite-radius: 6.0
+    fireball-yield: 1.0
+    # Ghast Fireball'lar blok kirar (false = grief korumasi)
+    break-blocks: true
+  water-push:
+    range: 6.0
+    push-power: 1.4
+  ice-chain:
+    range: 12.0
+    freeze-seconds: 3
+    avatar-freeze-seconds: 2
+  healing-wave:
+    heal-amount: 8.0
+    radius: 8.0
+    regen-seconds: 20
+  rock-punch:
+    bonus-damage: 4.0
+    arm-seconds: 10
+  stone-wall:
+    duration-seconds: 6
+  earthquake:
+    radius: 8.0
+    slowness-seconds: 6
+
+avatar-soul:
+  # Ruhun kilitlendigi envanter slotu (35 = ana envanterin sag alt kosesi)
+  slot: 35
+
+avatar-state:
+  duration-seconds: 15
+  cooldown-multiplier: 0.75
+  weakness-seconds: 15
+
+passives:
+  # Toprak bukucunun aldigi geri tepme carpani (0.5 = %50 azaltma)
+  earth-knockback-multiplier: 0.5
+  # Ates bukucu yumrugunun yakma suresi (saniye)
+  fire-punch-seconds: 3

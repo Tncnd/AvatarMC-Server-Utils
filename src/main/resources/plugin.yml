@@ -1,0 +1,65 @@
+name: ElementBending
+version: 1.0.0
+main: dev.tuna.elementbending.ElementBendingPlugin
+api-version: '1.20'
+description: Vanilla dostu element bukme sistemi (Hava, Su, Ates, Toprak ve Avatar)
+author: Tuna
+
+commands:
+  element:
+    description: Element sistemi ana komutu
+    aliases: [eb, bukucu]
+    usage: /element [sec|tus|bilgi|admin]
+  guide:
+    description: Element rehberi menusu
+    aliases: [rehber]
+    usage: /guide
+  avatar:
+    description: Avatarlik devri
+    usage: /avatar <transfer|kabul>
+  announcement:
+    description: Vurgulu duyuru yayinlar (yazan gorunur)
+    aliases: [duyuru]
+    usage: /announcement <mesaj>
+    permission: elementbending.announce
+  autoannouncement:
+    description: Tekrarlayan imzasiz duyuru
+    aliases: [otoduyuru]
+    usage: /autoannouncement <mesaj> <sayi> <dakika|saat>
+    permission: elementbending.announce
+  nightvision:
+    description: Sinirsiz Gece Gorusu II ac/kapat
+    aliases: [nv, gecegorusu]
+    usage: /nightvision
+  advancedban:
+    description: Sureli ban atar
+    aliases: [aban]
+    usage: /advancedban <oyuncu> <sayi> <dakika|saat|gun> <neden>
+    permission: elementbending.ban
+  mute:
+    description: Oyuncuyu chatte susturur
+    usage: /mute <oyuncu> <sayi> <dakika|saat|gun> <neden>
+    permission: elementbending.mute
+  unmute:
+    description: Susturmayi kaldirir
+    usage: /unmute <oyuncu>
+    permission: elementbending.mute
+  guiac:
+    description: Bir oyuncuya element secim menusunu acar
+    aliases: [guiaç, elementgui]
+    usage: /guiac <oyuncu>
+    permission: elementbending.admin
+
+permissions:
+  elementbending.admin:
+    description: Admin komutlarina erisim
+    default: op
+  elementbending.ban:
+    description: /advancedban komutuna erisim
+    default: op
+  elementbending.mute:
+    description: /mute ve /unmute komutlarina erisim
+    default: op
+  elementbending.announce:
+    description: /announcement ve /autoannouncement komutlarina erisim
+    default: op
