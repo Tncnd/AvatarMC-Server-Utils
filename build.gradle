@@ -35,7 +35,7 @@ tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
     // Java 17 bytecode: 1.20.x sunuculari Java 17 ile calisabilir;
     // 26.x sunuculari (Java 25) geriye donuk uyumlu sekilde yukler.
-    options.release = 17
+    options.release = 21
 }
 
 jar {
