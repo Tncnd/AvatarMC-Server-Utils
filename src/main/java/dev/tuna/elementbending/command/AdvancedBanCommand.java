@@ -58,15 +58,8 @@ public final class AdvancedBanCommand implements TabExecutor {
         if (!target.isOnline() && !target.hasPlayedBefore()) {
             Msg.send(sender, "Uyarı: bu isimde bir oyuncu sunucuya hiç girmemiş; isim yanlışsa ban isabet etmez.", NamedTextColor.YELLOW);
         }
-        try {
-            ProfileBanList banList = Bukkit.getBanList(BanList.Type.PROFILE);
-            banList.addBan(target.getPlayerProfile(), reason, expires, sender.getName());
-        } catch (NoSuchFieldError | NoClassDefFoundError ex) {
-            // Cok eski 1.20.0: isim tabanli eski ban listesi
-            @SuppressWarnings("deprecation")
-            BanList<String> legacy = Bukkit.getBanList(BanList.Type.NAME);
-            legacy.addBan(args[0], reason, expires, sender.getName());
-        }
+        ProfileBanList banList = Bukkit.getBanList(BanList.Type.PROFILE);
+        banList.addBan(target.getPlayerProfile(), reason, expires, sender.getName());
 
         if (target.isOnline() && target instanceof Player online) {
             online.kick(Component.text(Lang.t("Sunucudan yasaklandın!\n\n"), NamedTextColor.RED)
