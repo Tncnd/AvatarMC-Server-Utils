@@ -23,6 +23,14 @@ dependencies {
     compileOnly 'io.papermc.paper:paper-api:1.21.11-R0.1-SNAPSHOT'
 }
 
+// paper-api "Java 21 gerektiririm" der; bytecode'u 17 uretirken
+// bagimlilik cozumunun 21 varyantini kabul etmesini sagla.
+configurations.compileClasspath {
+    attributes {
+        attribute(org.gradle.api.attributes.java.TargetJvmVersion.TARGET_JVM_VERSION_ATTRIBUTE, 21)
+    }
+}
+
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
     // Java 17 bytecode: 1.20.x sunuculari Java 17 ile calisabilir;
